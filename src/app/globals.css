@@ -1,0 +1,303 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/*  Theme tokens                                                              */
+/* -------------------------------------------------------------------------- */
+@theme {
+  --color-accent-50: #eff6ff;
+  --color-accent-100: #dbeafe;
+  --color-accent-200: #bfdbfe;
+  --color-accent-300: #93c5fd;
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
+  --color-accent-700: #1d4ed8;
+  --color-accent-800: #1e40af;
+  --color-accent-900: #1e3a8a;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Base                                                                      */
+/* -------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    color-scheme: dark;
+    --bg: #05060a;
+    --bg-elev: #0b0d14;
+    --bg-soft: #0f1220;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --text: #e5e7eb;
+    --text-soft: #9ca3af;
+    --text-muted: #6b7280;
+    --accent: #3b82f6;
+  }
+
+  html.light {
+    color-scheme: light;
+    --bg: #ffffff;
+    --bg-elev: #f8fafc;
+    --bg-soft: #f1f5f9;
+    --border: rgba(15, 23, 42, 0.08);
+    --border-strong: rgba(15, 23, 42, 0.14);
+    --text: #0f172a;
+    --text-soft: #475569;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.35);
+    color: #fff;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.45);
+  }
+
+  /* Focus rings */
+  :focus-visible {
+    outline: 2px solid rgba(59, 130, 246, 0.6);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Utilities                                                                 */
+/* -------------------------------------------------------------------------- */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .glass {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid var(--border);
+  }
+
+  .glass-strong {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--border-strong);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 40%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.5),
+      rgba(59, 130, 246, 0) 40%,
+      rgba(59, 130, 246, 0) 60%,
+      rgba(59, 130, 246, 0.4)
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .grid-pattern {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .mask-fade-y {
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent);
+    mask-image: linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Reduced motion                                                            */
+/* -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Light mode overrides for existing dark utility classes                     */
+/* -------------------------------------------------------------------------- */
+html.light body,
+body[data-theme="light"] {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light main,
+body[data-theme="light"] main {
+  background: #f8fafc !important;
+}
+
+html.light .glass,
+html.light .glass-strong,
+body[data-theme="light"] .glass,
+body[data-theme="light"] .glass-strong {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(15, 23, 42, 0.1);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+html.light .text-white,
+html.light .text-neutral-200,
+html.light .text-neutral-300,
+body[data-theme="light"] .text-white,
+body[data-theme="light"] .text-neutral-200,
+body[data-theme="light"] .text-neutral-300 {
+  color: #0f172a !important;
+}
+
+html.light .text-neutral-400,
+html.light .text-neutral-500,
+body[data-theme="light"] .text-neutral-400,
+body[data-theme="light"] .text-neutral-500 {
+  color: #475569 !important;
+}
+
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20,
+body[data-theme="light"] .border-white\/10,
+body[data-theme="light"] .border-white\/15,
+body[data-theme="light"] .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+html.light .bg-white\/5,
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.02\],
+body[data-theme="light"] .bg-white\/5,
+body[data-theme="light"] .bg-white\/\[0\.03\],
+body[data-theme="light"] .bg-white\/\[0\.02\] {
+  background-color: rgba(255, 255, 255, 0.72) !important;
+}
+
+html.light .bg-\[\#05060a\]\/70,
+html.light .bg-\[\#05060a\]\/85,
+html.light .bg-\[\#05060a\],
+body[data-theme="light"] .bg-\[\#05060a\]\/70,
+body[data-theme="light"] .bg-\[\#05060a\]\/85,
+body[data-theme="light"] .bg-\[\#05060a\] {
+  background-color: rgba(248, 250, 252, 0.86) !important;
+}
+
+html.light input,
+html.light textarea,
+body[data-theme="light"] input,
+body[data-theme="light"] textarea {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #0f172a !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder,
+body[data-theme="light"] input::placeholder,
+body[data-theme="light"] textarea::placeholder {
+  color: #64748b !important;
+}
+
+html.light .gradient-text,
+body[data-theme="light"] .gradient-text {
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 55%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+html.light .grid-pattern,
+body[data-theme="light"] .grid-pattern {
+  background-image: linear-gradient(
+      to right,
+      rgba(15, 23, 42, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+}
