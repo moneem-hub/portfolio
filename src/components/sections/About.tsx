@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { Code2, GraduationCap, Heart, Target } from "lucide-react";
@@ -60,12 +60,13 @@ export function About() {
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {[
+                "Flutter & Dart",
+                "Python & Scripting",
+                "Linux Environment",
                 "Cross-platform mobile",
                 "Clean architecture",
-                "State management",
-                "REST APIs",
-                "UI/UX",
-                "Performance",
+                "Firebase & REST APIs",
+                "UI/UX & Performance",
               ].map((tag) => (
                 <span
                   key={tag}

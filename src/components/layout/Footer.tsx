@@ -21,8 +21,8 @@ export function Footer() {
               </span>
             </a>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-400">
-              {profile.role} crafting production-ready mobile experiences with
-              Flutter, Dart, and Firebase.
+              {profile.role} crafting production-ready mobile and software experiences with
+              Flutter, Dart, Python, Linux, and Firebase.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export function Footer() {
               Connect
             </h3>
             <p className="mt-4 text-sm text-neutral-400">
-              Open to full-time Flutter / Mobile opportunities and interesting
+              Open to full-time Flutter / Mobile and Software opportunities and interesting
               collaborations.
             </p>
             <div className="mt-5 flex items-center gap-2">

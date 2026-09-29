@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: SITE.url,
-    title: `${SITE.name} - Flutter Mobile Application Developer`,
+    title: `${SITE.name} - Flutter & Software Developer`,
     description: SITE.description,
     siteName: SITE.name,
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} - Flutter Mobile Application Developer`,
+    title: `${SITE.name} - Flutter & Software Developer`,
     description: SITE.description,
     creator: SITE.twitter,
     images: [SITE.ogImage],
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     "@type": "Person",
     name: SITE.name,
     url: SITE.url,
-    jobTitle: "Flutter Mobile Application Developer",
+    jobTitle: "Flutter & Software Developer",
     description: SITE.description,
     email: "moneemraxa@gmail.com",
     sameAs: [

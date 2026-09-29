@@ -7,6 +7,7 @@ import {
   Cloud,
   Code2,
   Database,
+  FileCode,
   Flame,
   GitBranch,
   Globe2,
@@ -19,6 +20,7 @@ import {
   Server,
   ShieldCheck,
   Smartphone,
+  Terminal,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -26,6 +28,14 @@ import { cn } from "@/lib/utils";
 const ICONS: Record<string, LucideIcon> = {
   flutter: Smartphone,
   dart: Braces,
+  python: FileCode,
+  scripting: Terminal,
+  automation: Terminal,
+  linux: Terminal,
+  ubuntu: Terminal,
+  bash: Terminal,
+  shell: Terminal,
+  "tools & os": Terminal,
   firebase: Flame,
   firestore: Database,
   "cloud firestore": Database,
@@ -40,6 +50,7 @@ const ICONS: Record<string, LucideIcon> = {
   rest: Globe2,
   http: Globe2,
   "c#": Hash,
+  "c# & .net": Hash,
   ".net": Server,
   sql: Database,
   html: Code2,

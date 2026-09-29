@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -11,6 +11,7 @@ import { HeroBackground } from "@/components/sections/HeroBackground";
 
 const ROLES = [
   "Flutter Developer",
+  "Python & Linux Developer",
   "Mobile App Engineer",
   "Firebase Specialist",
   "Dart Craftsman",
@@ -197,7 +198,7 @@ export function Hero() {
                     Current focus
                   </div>
                   <p className="mt-2 text-sm text-neutral-200">
-                    Flutter / Firebase / Clean architecture / Scalable mobile apps
+                    Flutter / Python / Linux / Firebase / Scalable apps
                   </p>
                 </div>
               </div>

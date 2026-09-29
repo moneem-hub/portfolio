@@ -1,4 +1,4 @@
-﻿// Centralized portfolio data sourced from the resume.
+// Centralized portfolio data sourced from the resume.
 // If any field is missing, a TODO placeholder is left.
 
 export type SocialLink = {
@@ -56,8 +56,8 @@ export type AchievementItem = {
 export const profile = {
   name: "Muhammad Moneem Raza",
   shortName: "Muhammad Moneem Raza",
-  role: "Flutter Mobile Application Developer",
-  tagline: "Crafting production-ready mobile experiences with Flutter, Firebase, and clean architecture.",
+  role: "Flutter & Software Developer",
+  tagline: "Crafting production-ready mobile and software experiences with Flutter, Dart, Python, Linux, and Firebase.",
   email: "moneemraxa@gmail.com",
   phone: "+923081125201",
   location: "226 Executive Block, Street #12, Paragon City, Barki Road, Lahore",
@@ -71,19 +71,20 @@ export const socials: SocialLink[] = [
 ];
 
 export const summary = {
-  headline: "Flutter Mobile Application Developer",
+  headline: "Flutter & Software Developer",
   story:
-    "I am a passionate Flutter mobile application developer with hands-on experience building real-world apps using Dart and Firebase. Through my internship and personal projects, I have developed multiple production-ready applications and refined my skills in writing clean, efficient code. I am committed to delivering meaningful user experiences and continuously learning modern mobile development practices.",
+    "I am a passionate software and Flutter mobile application developer with hands-on experience building real-world apps and automation tools using Dart, Python, and Firebase across Linux and cross-platform environments. Through my internship and personal projects, I have developed multiple production-ready applications and refined my skills in writing clean, efficient code. I am committed to delivering meaningful user experiences and continuously learning modern software development practices.",
   education: "Bachelor of Science in Computer Science - University of Agriculture Faisalabad (Graduating June 2026)",
   interests: [
-    "Cross-platform mobile development",
+    "Cross-platform mobile development (Flutter & Dart)",
+    "Python scripting, automation, and backend logic",
+    "Linux environments and system workflows",
     "Clean architecture and scalable state management",
     "UI/UX design and interaction details",
-    "Open source contribution",
-    "Continuous learning and problem solving",
+    "Open source contribution and problem solving",
   ],
   objective:
-    "To secure a challenging role as a software engineer where I can contribute to impactful mobile products, grow as a developer, and collaborate with teams that value craft and clarity.",
+    "To secure a challenging role as a software engineer where I can contribute to impactful mobile and software products, grow as a developer, and collaborate with teams that value craft and clarity.",
 };
 
 export const skills: Skill[] = [
@@ -94,17 +95,19 @@ export const skills: Skill[] = [
   { name: "Firestore", level: 84, category: "Mobile Development" },
   { name: "REST APIs", level: 80, category: "Mobile Development" },
 
-  // Backend
+  // Backend & Scripting
+  { name: "Python", level: 88, category: "Backend" },
   { name: "C#", level: 80, category: "Backend" },
   { name: ".NET", level: 75, category: "Backend" },
-  { name: "SQL", level: 72, category: "Backend" },
+  { name: "SQL", level: 78, category: "Backend" },
 
   // Web
   { name: "HTML", level: 80, category: "Web" },
   { name: "CSS", level: 78, category: "Web" },
   { name: "JavaScript", level: 80, category: "Web" },
 
-  // Tools
+  // Tools & OS
+  { name: "Linux", level: 88, category: "Tools" },
   { name: "Git", level: 90, category: "Tools" },
   { name: "GitHub", level: 85, category: "Tools" },
   { name: "Android Studio", level: 88, category: "Tools" },
@@ -118,15 +121,16 @@ export const skills: Skill[] = [
 export const skillCategories: { name: string; items: string[] }[] = [
   { name: "Flutter", items: ["Flutter", "Dart", "Provider", "State Management"] },
   { name: "Dart", items: ["Dart", "Async", "OOP"] },
+  { name: "Python", items: ["Python", "Scripting", "Automation", "REST"] },
+  { name: "Linux", items: ["Linux", "Ubuntu", "Bash", "Shell"] },
   { name: "Firebase", items: ["Firebase Auth", "Cloud Firestore", "FCM"] },
   { name: "REST APIs", items: ["REST", "Postman", "HTTP"] },
-  { name: "C#", items: ["C#", ".NET"] },
-  { name: ".NET", items: [".NET", ".NET Basics"] },
+  { name: "C# & .NET", items: ["C#", ".NET"] },
   { name: "SQL", items: ["SQL", "Queries"] },
   { name: "Git", items: ["Git", "GitHub"] },
   { name: "UI/UX", items: ["UI Design", "UX", "Responsive Layouts"] },
   { name: "Mobile Development", items: ["Flutter", "Firebase", "Cross-platform"] },
-  { name: "Tools", items: ["Android Studio", "VS Code", "Postman", "GitHub"] },
+  { name: "Tools & OS", items: ["Linux", "Android Studio", "VS Code", "Postman", "GitHub"] },
 ];
 
 export const experiences: ExperienceItem[] = [
@@ -199,14 +203,13 @@ export const projects: Project[] = [
     id: "average-marks",
     title: "Average Marks Calculator",
     description:
-      "An interactive web tool for calculating semester GPA with dynamic subject input and instant result rendering using vanilla JavaScript.",
+      "An interactive web and scripting tool for calculating semester GPA with dynamic subject input and instant result rendering.",
     features: [
       "Dynamic subject input",
       "Instant GPA calculation",
-      "Clean responsive UI",
+      "Python data logic & clean responsive UI",
     ],
-    tech: ["HTML", "CSS", "JavaScript"],
-    //github: "https://github.com/",
+    tech: ["Python", "HTML", "CSS", "JavaScript"],
     category: "Web",
   },
 ];
@@ -256,7 +259,7 @@ export const achievements: AchievementItem[] = [
 export const stats = [
   { label: "Projects Built", value: 4 },
   { label: "Certifications", value: 3 },
-  { label: "Core Technologies", value: 12 },
+  { label: "Core Technologies", value: 14 },
   { label: "Years of Study", value: 4 },
 ];
 

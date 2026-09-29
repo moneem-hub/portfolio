@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { useState, type FormEvent } from "react";
@@ -167,8 +167,7 @@ export function Contact() {
           <GlassCard className="h-full p-7">
             <h3 className="text-lg font-semibold text-white">Get in touch</h3>
             <p className="mt-2 text-sm text-neutral-400">
-              I&apos;m currently open to full-time Flutter / Mobile roles and
-              freelance projects.
+              I&apos;m currently open to full-time Flutter / Mobile and Software roles, as well as freelance projects.
             </p>
             <ul className="mt-6 space-y-4">
               {contactItems.map((c) => (

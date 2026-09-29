@@ -1,17 +1,19 @@
-﻿// Application-wide constants.
+// Application-wide constants.
 
 export const SITE = {
   name: "Muhammad Moneem Raza",
   shortName: "Muhammad Moneem",
   description:
-    "Portfolio of Muhammad Moneem Raza - Flutter Mobile Application Developer crafting production-ready mobile experiences with Dart, Firebase, and clean architecture.",
-  url: "https://moneemraza.dev",
+    "Portfolio of Muhammad Moneem Raza - Software & Flutter Developer crafting production-ready mobile and software experiences with Flutter, Dart, Python, Linux, and Firebase.",
+  url: "https://moneem-hub.github.io/portfolio",
   ogImage: "/favicon.svg",
   twitter: "@iammoneem",
   keywords: [
     "Muhammad Moneem Raza",
     "Muhammad Moneem",
     "Flutter Developer",
+    "Python Developer",
+    "Linux",
     "Mobile App Developer",
     "Dart",
     "Firebase",
