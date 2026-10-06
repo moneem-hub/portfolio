@@ -1,4 +1,7 @@
 node_modules/
 .next/
-.env*.local
+out/
 dist/
+.env*.local
+tsconfig.tsbuildinfo
+.freebuff/

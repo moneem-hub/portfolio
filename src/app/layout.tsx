@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
+import { BASE_PATH } from "@/lib/base-path";
 
 export const viewport: Viewport = {
   themeColor: "#05060a",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [{ url: `${BASE_PATH}/favicon.svg`, type: "image/svg+xml" }],
   },
   alternates: {
     canonical: SITE.url,

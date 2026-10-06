@@ -6,6 +6,7 @@ export const SITE = {
   description:
     "Portfolio of Muhammad Moneem Raza - Software & Flutter Developer crafting production-ready mobile and software experiences with Flutter, Dart, Python, Linux, and Firebase.",
   url: "https://moneem-hub.github.io/portfolio",
+  // Resolved against `SITE.url` (which already includes the base path) by Next metadata.
   ogImage: "/favicon.svg",
   twitter: "@iammoneem",
   keywords: [

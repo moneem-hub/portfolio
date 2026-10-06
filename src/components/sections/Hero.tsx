@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowDown, ArrowRight, Download, Mail, Sparkles } from "lucide-react";
 import { profile, stats, socials } from "@/data/portfolio";
+import { BASE_PATH } from "@/lib/base-path";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { ButtonLink } from "@/components/ui/Button";
 import { SocialIcon } from "@/components/ui/SocialIcon";
@@ -120,7 +121,7 @@ export function Hero() {
                 Get in touch
               </ButtonLink>
               <ButtonLink
-                href="/Muhammad%20Moneem%20Resume.pdf"
+                href={`${BASE_PATH}/Muhammad%20Moneem%20Resume.pdf`}
                 variant="secondary"
                 size="lg"
                 download
