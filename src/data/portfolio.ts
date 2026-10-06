@@ -57,11 +57,11 @@ export const profile = {
   name: "Muhammad Moneem Raza",
   shortName: "Muhammad Moneem Raza",
   role: "Flutter & Software Developer",
-  tagline: "Crafting production-ready mobile and software experiences with Flutter, Dart, Python, Linux, and Firebase.",
+  tagline: "Crafting production-ready mobile apps and software experiences with Flutter, Dart, Python, Linux, and Firebase.",
   email: "moneemraxa@gmail.com",
   phone: "+923081125201",
   location: "226 Executive Block, Street #12, Paragon City, Barki Road, Lahore",
-  initials: "MMR",
+  initials: "MR",
 };
 
 export const socials: SocialLink[] = [
