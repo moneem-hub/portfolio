@@ -34,6 +34,8 @@ src/
 public/
   favicon.svg
   Muhammad Moneem Resume.pdf
+  projects/
+    <Project>/<screenshot>
 ```
 
 ## Getting Started
@@ -59,6 +61,18 @@ npm run start
 All portfolio content lives in `src/data/portfolio.ts`. Edit that file to update profile details, skills, experience, projects, education, certifications, achievements, and social links.
 
 The resume PDF is `public/Muhammad Moneem Resume.pdf`; the Download Resume button points to that file.
+
+### Project images
+
+Screenshots live in `public/projects/` inside a folder named after the project, for example
+`public/projects/EchoSafe/Home Screen.png`. Each project in `src/data/portfolio.ts` lists its
+screens in an `images` array, in display order: the first screenshot is the card cover and all of
+them appear as labelled screens in the details modal. Projects without an `images` entry fall back
+to generated gradient artwork, so removing the array is always safe.
+
+Paths are written relative to `public/`, URL-encoded (`%20` for spaces) and with the exact folder
+case, because GitHub Pages serves files from a case-sensitive file system. The base path is added
+at render time by `withBase()`, so no path needs updating when the site is deployed.
 
 ## Deploying To GitHub Pages
 

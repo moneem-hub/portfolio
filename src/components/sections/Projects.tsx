@@ -1,67 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Code2 as Github, Search, Sparkles, X } from "lucide-react";
+import { ExternalLink, Code2 as Github, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { projects } from "@/data/portfolio";
 import { Section } from "@/components/ui/Section";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { ProjectModal } from "@/components/sections/ProjectModal";
+import { ProjectBanner } from "@/components/ui/ProjectBanner";
 import { TechIcon } from "@/components/ui/TechIcon";
 import type { Project } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 const FILTERS = ["All", "Mobile", "Web"] as const;
 type Filter = (typeof FILTERS)[number];
-
-function ProjectArt({ category }: { category: Project["category"] }) {
-  // Elegant, distinct placeholders per project so cards feel premium without images.
-  if (category === "Mobile") {
-    return (
-      <div className="relative h-44 w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-indigo-700/10 to-transparent" />
-        <div className="absolute inset-0 dot-pattern opacity-40" />
-        <div className="absolute -right-6 -top-6 h-40 w-40 rounded-full bg-blue-500/30 blur-3xl" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative h-28 w-16 rounded-2xl border border-white/15 bg-white/[0.04] shadow-[0_20px_40px_rgba(0,0,0,0.5)] backdrop-blur-md">
-            <div className="absolute left-1/2 top-1.5 h-1 w-6 -translate-x-1/2 rounded-full bg-white/10" />
-            <div className="absolute inset-x-2 top-5 bottom-2 rounded-lg bg-gradient-to-br from-white/10 to-transparent" />
-          </div>
-        </div>
-      </div>
-    );
-  }
-  if (category === "Web") {
-    return (
-      <div className="relative h-44 w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/25 via-cyan-700/10 to-transparent" />
-        <div className="absolute inset-0 grid-pattern opacity-40" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative h-28 w-44 overflow-hidden rounded-lg border border-white/15 bg-white/[0.04] shadow-[0_20px_40px_rgba(0,0,0,0.5)] backdrop-blur-md">
-            <div className="flex h-4 items-center gap-1 border-b border-white/10 bg-white/[0.04] px-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
-              <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
-              <span className="h-1.5 w-1.5 rounded-full bg-white/10" />
-            </div>
-            <div className="grid grid-cols-3 gap-1 p-2">
-              {Array.from({ length: 9 }).map((_, i) => (
-                <div key={i} className="h-3 rounded-sm bg-white/10" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-  return (
-    <div className="relative h-44 w-full overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-blue-900/10 to-transparent" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <Sparkles className="h-10 w-10 text-blue-300/80" />
-      </div>
-    </div>
-  );
-}
 
 export function Projects() {
   const [filter, setFilter] = useState<Filter>("All");
@@ -144,7 +96,7 @@ export function Projects() {
               transition={{ duration: 0.6, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
             >
               <GlassCard className="flex h-full flex-col p-0" hover={false}>
-                <ProjectArt category={p.category} />
+                <ProjectBanner project={p} variant="card" />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center justify-between">
                     <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-blue-300">

@@ -21,6 +21,18 @@ export type ExperienceItem = {
   technologies: string[];
 };
 
+export type ProjectImage = {
+  /**
+   * Path inside `public/`, URL-encoded (spaces as `%20`) and case exact, since
+   * GitHub Pages serves it from a case-sensitive file system. Prefixed with the
+   * site base path at render time via `withBase()`.
+   */
+  src: string;
+  alt: string;
+  /** Short caption shown under the screenshot in the project details modal. */
+  label?: string;
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -32,6 +44,12 @@ export type Project = {
   live?: string;
   category: "Mobile" | "Web" | "Tool";
   featured?: boolean;
+  /**
+   * App screenshots, in display order: the first one is the card cover and all
+   * of them appear as labelled screens in the details modal. Projects without
+   * screenshots fall back to generated gradient artwork.
+   */
+  images?: ProjectImage[];
 };
 
 export type EducationItem = {
@@ -166,6 +184,23 @@ export const projects: Project[] = [
     github: "https://github.com/moneem-hub/EchoSafe",
     category: "Mobile",
     featured: true,
+    images: [
+      {
+        src: "projects/EchoSafe/Home%20Screen.png",
+        alt: "EchoSafe student portal home screen with submit complaint and advisor login actions",
+        label: "Portal Home",
+      },
+      {
+        src: "projects/EchoSafe/Student%20Complaint%20Screen.png",
+        alt: "EchoSafe anonymous complaint form with roll number, department and evidence upload fields",
+        label: "Submit Complaint",
+      },
+      {
+        src: "projects/EchoSafe/splash%20screen.jpg",
+        alt: "EchoSafe splash screen showing the Safe Echo branded logo",
+        label: "Splash Screen",
+      },
+    ],
   },
   {
     id: "cravely",
@@ -185,6 +220,18 @@ export const projects: Project[] = [
     github: "https://github.com/moneem-hub/cravely_restaurant_app",
     category: "Mobile",
     featured: true,
+    images: [
+      {
+        src: "projects/Cravely/cravely.jpeg",
+        alt: "Cravely restaurant app menu browsing screen with search, burger, pizza and drinks categories",
+        label: "Menu & Search",
+      },
+      {
+        src: "projects/Cravely/ccravely.jpeg",
+        alt: "Cravely sign in screen with email, password and Google sign in options",
+        label: "Sign In",
+      },
+    ],
   },
   {
     id: "fwbl",
